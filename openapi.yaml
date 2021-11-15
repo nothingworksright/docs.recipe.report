@@ -9,8 +9,8 @@ servers:
 paths:
   /:
     get:
-      summary: Information.
-      description: This is the root route of the Recipe.Report API server.
+      summary: Curtsy.
+      description: Say hello to the Recipe.Report API server. If alive, it will respond with a welcome message, documentation link, and your request headers.
       responses:
         '200':
           description: Success
@@ -74,3 +74,20 @@ paths:
                   code:
                     type: string
                     example: 500
+  /user/activate/{token}:
+    get:
+      summary: Activate a new user.
+      description: After a new user has been created, an activation link is emailed to the user. Following the activation link will activate the new user record. Once activated, a new user may sign in.
+      parameters:
+        - name: token
+          in: path
+          required: true
+          description: Activation token provided in the activation email.
+          schema:
+            type: string
+            format: token
+      responses:
+        '200':
+          description: Activated
+        '500':
+          description: Error
