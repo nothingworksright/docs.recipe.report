@@ -27,7 +27,7 @@ paths:
                     properties:
                       message:
                         type: string
-                        example: 'Welcome to the Recipe.Report API server. This is the root route. For documentation please go to https://nothingworksright.github.io/api.recipe.report/'
+                        example: 'Welcome to the Recipe.Report API server. This is the root route.'
                       request_headers:
                         type: object
   /user/register:
